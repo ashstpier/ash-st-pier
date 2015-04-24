@@ -1,0 +1,26 @@
+---
+title: Ashley St Pier
+---
+
+.container
+
+  = partial "layouts/header"
+  = partial "layouts/controls"
+
+  #slideshow.dragslider
+    %section.img-dragger.img-dragger-large.dragdealer
+      .handle
+        = partial "project_slides/slide1"
+        = partial "project_slides/slide2"
+        = partial "project_slides/slide3"
+        = partial "project_slides/slide4"
+        = partial "project_slides/slide5"
+        = partial "project_slides/slide6"
+
+    %section.pages
+      = partial "projects/project1"
+      = partial "projects/project2"
+      = partial "projects/project3"
+      = partial "projects/project4"
+      = partial "projects/project5"
+      = partial "projects/project6"
