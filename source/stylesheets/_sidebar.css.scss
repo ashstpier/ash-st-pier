@@ -11,6 +11,17 @@
   left: 0;
   font-size: 0.85em;
   padding: 2em 2em;
+  overflow: auto;
+  .name {
+    font-size: 1.6em;
+    font-family: $serif;
+  }
+  img {
+    width: 200px;
+    height: 200px;
+    margin-bottom: 10px;
+    @include border-radius(50%);
+  }
 }
 
 .sidebar h1 {
@@ -25,20 +36,9 @@
 }
 
 .bio {
-  .name {
-    font-size: 1.4em;
-    margin-bottom: 10px;
-  }
-  img {
-    width: 200px;
-    height: 200px;
-    margin-bottom: 20px;
-    @include border-radius(50%);
-  }
+  text-align: left;
   .description {
-    padding-bottom: 30px;
-    margin-bottom: 20px;
-    border-bottom: 1px solid darken($color_secondary, 5%);
+    padding-bottom: 20px;
   }
 }
 
@@ -46,11 +46,14 @@
   margin: 0;
   padding: 0;
   list-style-type: none;
+  margin-bottom: 30px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid darken($color_secondary, 5%);
   li {
     display: inline-block;
   }
   a {
-    padding: 10px;
+    padding: 5px 15px;
     display: block;
   }
 }
