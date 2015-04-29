@@ -4,23 +4,33 @@ title: Ashley St Pier
 
 .container
 
-  = partial "layouts/header"
-  = partial "layouts/controls"
+  = partial "layouts/sidebar"
 
-  #slideshow.dragslider
-    %section.img-dragger.img-dragger-large.dragdealer
-      .handle
-        = partial "project_slides/slide1"
-        = partial "project_slides/slide2"
-        = partial "project_slides/slide3"
-        = partial "project_slides/slide4"
-        = partial "project_slides/slide5"
-        = partial "project_slides/slide6"
+  #theGrid.main
+    %section.grid
+      / = partial "layouts/header"
 
-    %section.pages
-      = partial "projects/project1"
-      = partial "projects/project2"
-      = partial "projects/project3"
-      = partial "projects/project4"
-      = partial "projects/project5"
-      = partial "projects/project6"
+      = partial "grid_items/axeon"
+      = partial "grid_items/neon"
+      = partial "grid_items/bookmix"
+      = partial "grid_items/ukcmap"
+      = partial "grid_items/axeon"
+      = partial "grid_items/neon"
+      = partial "grid_items/bookmix"
+      = partial "grid_items/ukcmap"
+
+    %section.content
+      .scroll-wrap
+
+        = partial "grid_content/axeon"
+        = partial "grid_content/neon"
+        = partial "grid_content/bookmix"
+        = partial "grid_content/ukcmap"
+        = partial "grid_content/axeon"
+        = partial "grid_content/axeon"
+        = partial "grid_content/axeon"
+        = partial "grid_content/axeon"
+
+      %button.close-button
+        %i.fa.fa-close.fa-lg
+        %span Close

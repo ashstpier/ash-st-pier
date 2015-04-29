@@ -1,0 +1,103 @@
+*, *:after, *:before { -webkit-box-sizing: border-box; box-sizing: border-box; }
+.clearfix:before, .clearfix:after { display: table;  content: ''; }
+.clearfix:after { clear: both; }
+
+body {
+  background: $color_secondary;
+  color: #7b7b7b;
+  font-weight: 400;
+  font-size: 16px;
+  font-family: $sansserif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow: hidden;
+  overflow-y: scroll; /* force scroll to appear */
+}
+
+/* helper class when showing content */
+.noscroll {
+  overflow: hidden;
+}
+
+a {
+  outline: none;
+  color: $color_link;
+  text-decoration: none;
+  @include transition(color 250ms);
+}
+
+a:hover,
+a:focus {
+  color: #333;
+  outline: none;
+}
+
+button:focus {
+  outline: none;
+}
+
+/* Main content */
+.main {
+  position: relative;
+  z-index: 50;
+}
+
+
+/* Top bar above the grid */
+.top-bar {
+  background: #fff;
+  width: 100%;
+  line-height: 1;
+  padding: 15px 15px 10px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  align-items: center;
+}
+
+.top-bar__headline {
+  margin: 0;
+  font-size: 0.75em;
+}
+
+
+/* close button (for content and sidebar) */
+.close-button {
+  position: absolute;
+  border: none;
+  background: none;
+  margin: 0;
+  z-index: 100;
+  top: 0;
+  right: 0;
+  font-size: 18px;
+  color: #ddd;
+  cursor: pointer;
+  pointer-events: none;
+  padding: 20px 30px;
+  opacity: 0;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-transition: opacity 0.3s;
+  transition: opacity 0.3s;
+}
+
+.close-button span {
+  display: none;
+}
+
+.close-button:hover {
+  color: #7b7b7b;
+}
+
+/* show class for content close button */
+.close-button--show {
+  opacity: 1;
+  pointer-events: auto;
+}
