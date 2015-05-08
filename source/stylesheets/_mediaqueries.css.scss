@@ -54,19 +54,14 @@ $viewport_xxl:  $item_width * 6 + $sidebar_width; /* 6 columns */
 
 @media screen and (min-width: $viewport_s) {
   .grid {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-flex-wrap: wrap;
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
+
   }
 
   /* 2 columns */
   .grid__item {
     width: 50%;
     border: none;
+    float: left;
   }
 
   .grid__item:hover::before,

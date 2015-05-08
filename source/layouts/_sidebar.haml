@@ -2,9 +2,16 @@
   %span Menu
 #theSidebar.sidebar
   %button.close-button.fa.fa-fw.fa-close
-
-  = image_tag "1.jpg"
+  = image_tag "profile.jpg"
   .name Ashley St Pier
+  .separator
+  .bio
+    .description
+      Creative full-stack developer. Love hacking together useful/useless demos with the latest tech goodies.
+    %div
+      = link_to 'mailto:ashleystpier@gmail.com', {target: '_blank'} do
+        Download my CV
+
   %ul.social
     %li
       = link_to 'https://dribbble.com/AshStPier', {target: '_blank'} do
@@ -15,16 +22,4 @@
     %li
       = link_to 'https://github.com/AshStPier', {target: '_blank'} do
         %i.fa.fa-github-alt
-
-  .bio
-    .description
-      Creative full-stack developer. Love hacking together useful/useless demos with the latest tech goodies. Gamer, podcast addict, wannabe foodie, geek.
-    %div
-      = link_to 'mailto:ashleystpier@gmail.com', {target: '_blank'} do
-        %i.fa.fa-fw.fa-file-text-o
-        Download my CV
-    %div
-      = link_to 'mailto:ashleystpier@gmail.com', {target: '_blank'} do
-        %i.fa.fa-fw.fa-envelope-o
-        Email me
 
