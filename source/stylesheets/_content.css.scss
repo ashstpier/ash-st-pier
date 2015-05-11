@@ -11,7 +11,7 @@
   overflow: hidden;
   img {
     width: 100%;
-    max-width: 1024px;
+    max-width: 800px;
     padding: 0;
     display: block;
     margin: 0 auto 20px;
@@ -27,12 +27,13 @@
 .caption {
   text-align: center;
   font-style: italic;
-  margin: 20px 0;
+  margin: 50px 0;
   font-size: 0.9em;
 }
 
-.description {
+.description--full {
   font-size: 0.9em;
+  opacity: 0;
 }
 
 /* scroll helper wrap */
@@ -85,7 +86,7 @@
 }
 
 .title--full {
-  margin-top: 50px;
+  margin-top: 20px;
   font-size: 1.4em;
   line-height: 1.5em;
 }
@@ -137,9 +138,9 @@
   .meta__avatar,
   .meta__author,
   .meta__date,
-  .meta__reading-time {
-    -webkit-transform: scale3d(0.5,0.5,1);
-    transform: scale3d(0.5,0.5,1);
+  .meta__reading-time,
+  .description--full {
+    @include translateX(50px);
   }
 }
 
@@ -149,12 +150,11 @@
   .meta--full .meta__avatar,
   .meta--full .meta__author,
   .meta--full .meta__date,
-  .meta--full .meta__reading-time {
+  .meta--full .meta__reading-time,
+  .description--full {
     opacity: 1;
-    -webkit-transform: translate3d(0,0,0);
-    transform: translate3d(0,0,0);
-    -webkit-transition: -webkit-transform 0.3s, opacity 0.3s;
-    transition: transform 0.3s, opacity 0.3s;
+    @include translateX(0);
+    @include transition(transform 0.5s, opacity 0.5s);
     -webkit-transition-timing-function: cubic-bezier(0.2,1,0.3,1);
     transition-timing-function: cubic-bezier(0.2,1,0.3,1);
   }

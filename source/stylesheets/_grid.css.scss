@@ -153,7 +153,7 @@
 .category {
   margin: 0;
   position: relative;
-  font-size: 1.2em;
+  font-size: 1em;
   font-style: italic;
   display: block;
   @include opacity(0);
@@ -216,7 +216,7 @@
 }
 
 .meta .fa {
-  margin-right: 4px;
+  margin-right: 10px;
 }
 
 .meta:before, .meta:after { display: table;  content: ''; }
@@ -255,26 +255,25 @@
   display: block;
   clear: both;
   text-align: left;
-  padding: 5px 0;
+  padding: 10px 0;
 }
 
 .meta__misc--seperator {
-  padding: 20px 0 0;
+  padding: 20px 0 10px;
   margin: 50px 0 0;
   border-top: 1px solid darken($color_secondary, 5%);
 }
 
 .article-nav {
-  display: -webkit-flex;
-  display: flex;
-  -webkit-justify-content: space-between;
-  justify-content: space-between;
+
 }
 
 .article-nav button {
   border: none;
   color: $color_link;
   background: none;
+  width: 50%;
+  float: left;
 }
 
 .article-nav button:hover {

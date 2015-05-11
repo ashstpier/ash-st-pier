@@ -86,7 +86,7 @@ body {
   }
   .content__item {
     right: 0;
-    padding: 20px;
+    padding: 50px 20px;
     padding-left: $meta_width + 20px;
   }
   .meta--full {
@@ -97,10 +97,13 @@ body {
     top: 0;
     left: 0;
     font-size: 0.85em;
-    padding: 15px 30px;
+    padding: 60px 30px 100px;
+    line-height: 1.5em;
   }
   .article-nav {
-    position: absolute;
+    position: fixed;
+    width: $meta_width;
+    background: $color_secondary;
     bottom: 0;
     left: 0;
     right: 0;

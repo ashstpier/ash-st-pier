@@ -46,19 +46,21 @@
 .bio {
   text-align: center;
   .description {
-    padding-bottom: 50px;
+    padding-bottom: 30px;
   }
   a {
     display: inline-block;
-    padding: 10px 25px;
-    background: $color_link;
-    color: #fff;
+    padding: 8px 15px;
+    border: solid 1px $color_link;
+    color: $color_link;
     margin-bottom: 10px;
     font-weight: 700;
     border-radius: 2px;
-    @include transition(background 200ms);
+    font-size: 12px;
+    @include transition(background 200ms, color 200ms);
     &:hover {
-      background: darken($color_link, 15%);
+      background: $color_link;
+      color: #fff;
     }
   }
 }
@@ -72,7 +74,7 @@
   font-size: 0;
   li {
     display: inline-block;
-    margin: 0 10px;
+    margin: 0 20px;
     font-size: 14px;
   }
   a {

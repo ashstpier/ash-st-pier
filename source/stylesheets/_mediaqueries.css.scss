@@ -148,6 +148,12 @@ $viewport_xxl:  $item_width * 6 + $sidebar_width; /* 6 columns */
     pointer-events: none;
     z-index: -1;
   }
+  .view-single .menu-toggle span {
+    background: #ccc;
+    &:before, &:after {
+      background: #ccc;
+    }
+  }
 }
 
 @media screen and (max-height: 580px) {
