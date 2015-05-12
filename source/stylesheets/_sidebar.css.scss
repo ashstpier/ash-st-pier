@@ -14,15 +14,16 @@
   padding: 2em 2em;
   overflow: auto;
   .name {
-    font-size: 1.6em;
+    font-size: 2em;
     font-family: $serif;
-    margin-bottom: 15px;
+    margin-bottom: 30px;
+    font-weight: 400;
   }
   .separator {
     display: inline-block;
     width: 30px;
     border-top: 2px solid #ddd;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
   }
   img {
     max-width: 160px;
@@ -45,6 +46,7 @@
 
 .bio {
   text-align: center;
+  font-size: 0.9em;
   .description {
     padding-bottom: 30px;
   }
@@ -54,9 +56,9 @@
     border: solid 1px $color_link;
     color: $color_link;
     margin-bottom: 10px;
-    font-weight: 700;
+    font-weight: 400;
     border-radius: 2px;
-    font-size: 12px;
+    font-size: 13px;
     @include transition(background 200ms, color 200ms);
     &:hover {
       background: $color_link;

@@ -5,12 +5,14 @@
   width: 25px;
   height: 25px;
   top: 14px;
-  left: 14px;
+  right: 20px;
   cursor: pointer;
   background: none;
   border: none;
   display: none;
   margin: -2px 15px 0 0;
+  @include translateX(0);
+  @include transition(transform $anim_time);
 }
 
 .menu-toggle span {

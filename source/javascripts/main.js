@@ -42,7 +42,7 @@
     lockScroll = false, xscroll, yscroll,
     isAnimating = false,
     menuCtrl = document.getElementById('menu-toggle'),
-    menuCloseCtrl = sidebarEl.querySelector('.close-button');
+    menuCloseCtrl = gridEl.querySelector('.main-overlay');
 
   /**
    * gets the viewport width and height
@@ -111,12 +111,19 @@
     menuCtrl.addEventListener('click', function() {
       if( !classie.has(sidebarEl, 'sidebar--open') ) {
         classie.add(sidebarEl, 'sidebar--open');
+        $('.main, .menu-toggle').addClass('sidebar--open');
+      }
+      else if( classie.has(sidebarEl, 'sidebar--open') ) {
+        classie.remove(sidebarEl, 'sidebar--open');
+        $('.main, .menu-toggle').removeClass('sidebar--open');
       }
     });
 
     menuCloseCtrl.addEventListener('click', function() {
+      console.log('test')
       if( classie.has(sidebarEl, 'sidebar--open') ) {
         classie.remove(sidebarEl, 'sidebar--open');
+        $('.main, .menu-toggle').removeClass('sidebar--open');
       }
     });
   }
@@ -176,6 +183,7 @@
 
     setTimeout(function() {
       var dummy = gridItemsContainer.querySelector('.placeholder');
+      classie.remove(dummy, 'placeholder--open');
 
       classie.removeClass(bodyEl, 'noscroll');
 
@@ -205,6 +213,10 @@
     }
     window.scrollTo(xscroll, yscroll);
   }
+
+  $( window ).resize(function() {
+    $( ".placeholder" ).addClass('placeholder--open');
+  });
 
   init();
 

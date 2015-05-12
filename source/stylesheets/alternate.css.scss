@@ -68,16 +68,12 @@ body {
   transform: translate3d(40px, 0, 0);
 }
 
-.content__item--show .title--full {
-  -webkit-transition-delay: 0.15s;
-  transition-delay: 0.15s;
-}
 
 @media screen and (min-width: $viewport_xs) {
   .sidebar,
   .grid {
-    -webkit-transition: -webkit-transform $anim-time;
-    transition: transform $anim-time;
+    -webkit-transition: -webkit-transform 0s;
+    transition: -webkit-transform 0s;
   }
   .view-single .sidebar,
   .view-single .grid {
@@ -96,7 +92,7 @@ body {
     background: $color_secondary;
     top: 0;
     left: 0;
-    font-size: 0.85em;
+    font-size: 0.9em;
     padding: 60px 30px 100px;
     line-height: 1.5em;
   }
@@ -143,5 +139,10 @@ body {
   .meta__misc,
   .article-nav {
     display: none;
+  }
+  .sidebar,
+  .grid {
+    -webkit-transition: -webkit-transform $anim-time;
+    transition: transform $anim-time;
   }
 }

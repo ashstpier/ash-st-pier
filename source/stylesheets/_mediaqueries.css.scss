@@ -23,6 +23,11 @@ $viewport_xxl:  $item_width * 6 + $sidebar_width; /* 6 columns */
     font-size: 1em;
   }
 
+  .sidebar {
+    -webkit-transition: -webkit-transform 0s;
+    transition: -webkit-transform 0s;
+  }
+
   /* Demo ad */
   body #cdawrap {
     right: auto;
@@ -49,6 +54,9 @@ $viewport_xxl:  $item_width * 6 + $sidebar_width; /* 6 columns */
 
   body #cdawrap #cda-remove {
     display: none;
+  }
+  .caption {
+    margin: 30px 0;
   }
 }
 
@@ -105,16 +113,26 @@ $viewport_xxl:  $item_width * 6 + $sidebar_width; /* 6 columns */
 /* small screen changes for sidebar (it becomes an off-canvas menu) */
 @media screen and (max-width: $viewport_xs - 1px) {
   .sidebar {
-    -webkit-transform: translate3d(-100%,0,0);
-    transform: translate3d(-100%,0,0);
+    -webkit-transform: translate3d(100%,0,0);
+    transform: translate3d(100%,0,0);
     -webkit-transition: -webkit-transform 0.3s;
     transition: -webkit-transform 0.3s;
+    left: auto;
+    right: 0;
+    background: $color_primary;
   }
   .sidebar.sidebar--open {
     -webkit-transform: translate3d(0,0,0);
     transform: translate3d(0,0,0);
   }
-  .sidebar.sidebar--open ~ .main {
+  .main.sidebar--open, .menu-toggle.sidebar--open {
+    @include translateX(- $sidebar_width);
+  }
+  .main.sidebar--open .main-overlay {
+    background: #000;
+    @include opacity(0.5);
+  }
+  .sidebar.sidebar--open ~ .main .grid {
     pointer-events: none;
   }
   .top-bar {
@@ -127,32 +145,38 @@ $viewport_xxl:  $item_width * 6 + $sidebar_width; /* 6 columns */
     opacity: 1;
     pointer-events: auto;
   }
+  .caption {
+    margin: 30px 0;
+  }
   .title--full {
     font-size: 2em;
   }
   .content__item {
-    padding: 80px 20px 40px;
+    padding: 60px 20px 40px;
   }
   .content .close-button {
-    padding: 10px 20px;
+    position: fixed;
+    top: 9px;
+    left: 20px;
   }
-  .content .close-button::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    right: 0;
+  .close-bar {
+    width: 100%;
+    height: 53px;
     background: $color_secondary;
-    border-bottom: 1px solid $color_primary;
-    width: 100vw;
-    height: 50px;
-    pointer-events: none;
-    z-index: -1;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 60;
+    border-bottom: solid 1px #eee;
   }
   .view-single .menu-toggle span {
     background: #ccc;
     &:before, &:after {
       background: #ccc;
     }
+  }
+  .placeholder.placeholder--open {
+    background: $color_secondary !important;
   }
 }
 
